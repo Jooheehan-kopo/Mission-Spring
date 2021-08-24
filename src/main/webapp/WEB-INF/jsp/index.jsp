@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-hello
+  <a href="${pageContext.request.contextPath}/board">게시글</a>
+  <a href="${pageContext.request.contextPath}/board/write">새글등록</a>
+  <a href="${pageContext.request.contextPath}/login">로그인</a>
 </body>
 </html>
