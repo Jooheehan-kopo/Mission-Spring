@@ -21,4 +21,14 @@
 		where no = #{no}
 	</select>
 	
+	<insert id="write" parameterType="BoardVO" >
+		insert into t_board(no,title,writer,content)
+			values(seq_t_board_no.nextval, #{title}, #{writer}, #{content})
+	</insert> 
+	
+	<update id="viewCnt">
+		update t_board set view_cnt = view_cnt+1
+		where no = #{no}
+	</update>
+	
 </mapper>

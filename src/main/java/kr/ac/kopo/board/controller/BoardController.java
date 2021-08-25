@@ -60,12 +60,14 @@ public class BoardController {
 		 * LoginVO userVO = session.getAttribute userVO.getId() ///
 		 */		
 		
+		//로그인여부 판단->
 		
 		//BoardVO board = new BoardVO();
 		//board.setTitle("제목이요"); //얠 넣어준거임.
 		//model.addAttribute(board);
 		
 		model.addAttribute("boardVO",new BoardVO()); //공유영역에 객체등록 boardvo
+		
 		
 		return "board/write";
 	}
@@ -79,12 +81,12 @@ public class BoardController {
 		System.out.println(board);
 		
 		if(error.hasErrors()) {
-			System.out.println("오류발생!");
+			System.out.println("에러발생!");
 			return "board/write";
 		}
 		
 //		System.out.println(error.hasErrors());//에러가 있는지 여부 t/f
-		
+		service.insertBoard(board);
 		return "redirect:/board";
 		//errors : 에러체크 항상붙어있어야함. 중간에 모 들어가면 안됨.
 		//=BindingResult result -> errors 상속받은 애임.

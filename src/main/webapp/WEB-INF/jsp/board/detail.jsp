@@ -92,6 +92,12 @@
       <input type="button" id="backBtn" value="목록" />
    
    </div>
+   <hr>
+   댓글: <input type= "text" name="comment"/>
+   작성자: <input type= "text" name="writer"/>
+   <button>댓글등록</button>
+   <hr>
+   
    </section>
    <footer>
       <%-- <%@ include file="/jsp/include/bottom.jsp" %> --%>

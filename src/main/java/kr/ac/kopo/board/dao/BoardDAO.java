@@ -17,4 +17,6 @@ public interface BoardDAO {
 	 */
 	BoardVO searchOne(int no);
 	
+	void insertBoard(BoardVO board);
+	
 }

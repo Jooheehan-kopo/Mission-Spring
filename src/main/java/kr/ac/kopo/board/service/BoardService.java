@@ -9,4 +9,6 @@ public interface BoardService {
 	List<BoardVO> selectAllBoard();
 	
 	BoardVO selectOneBoard(int no);
+	
+	void insertBoard(BoardVO board);
 }

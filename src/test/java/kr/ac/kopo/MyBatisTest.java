@@ -16,6 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.ac.kopo.board.vo.BoardVO;
+import kr.ac.kopo.member.vo.MemberVO;
 
 @RunWith(SpringJUnit4ClassRunner.class) // spring 기반 test를 해보는 것. 객체를 가져와야함. spring-mvc 읽어야함
 @ContextConfiguration(locations = { "classpath:config/spring/spring-mvc.xml" }) // 서버를 실행하고 있진 않지만 이객체를 사용ㅇ해서 테스트함
@@ -53,11 +54,20 @@ public class MyBatisTest {
 		}
 		
 	}
-	
+	@Ignore
 	@Test
 	public void 상세게시글조회test() throws Exception{
 		BoardVO board = sessionTemplate.selectOne("board.BoardDAO.selectByNo",23);
 		System.out.println(board);
 		
+	}
+	@Test
+	public void 로그인테스트() throws Exception{
+		MemberVO member = new MemberVO();
+		member.setId("user");
+		member.setPassword("user");
+		
+		MemberVO userVO = sessionTemplate.selectOne("member.MemberDAO.login", member);
+		assertNotNull(userVO);
 	}
 }

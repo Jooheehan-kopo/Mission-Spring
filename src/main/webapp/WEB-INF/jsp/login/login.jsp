@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/board.css" />
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+if ('${msg}'
+		
 /*
    function isNull(obj, msg) {
       if(obj.value == '') {
@@ -67,6 +69,13 @@
                   <th>PASSWORD</th>
                   <td><input type="password" name="password"></td>
                </tr>
+               
+               <tr>
+               		<td colspan="2">
+					<input type="checkbox">아이디저장
+					</td>
+				</tr>               		
+               
             </table>
             <br>
             <input type="submit" value="로그인">

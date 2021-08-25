@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.board.dao.BoardDAO;
 import kr.ac.kopo.board.vo.BoardVO;
 
-@Service  //자동으로 컨테이너에서 관리. dao가 db access
+@Service // 자동으로 컨테이너에서 관리. dao가 db access
 public class BoardServiceImpl implements BoardService {
-	
+
 	@Autowired
 	private BoardDAO boardDAO;
 
@@ -18,10 +18,17 @@ public class BoardServiceImpl implements BoardService {
 		List<BoardVO> boardList = boardDAO.searchAll();
 		return boardList;
 	}
-	
+
 	public BoardVO selectOneBoard(int no) {
 		BoardVO board = boardDAO.searchOne(no);
 		return board;
+	}
+
+	public void insertBoard(BoardVO board) {
+
+		BoardVO vo = new BoardVO();
+		boardDAO.insertBoard(board);
+	
 	}
 
 }

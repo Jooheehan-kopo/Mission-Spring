@@ -43,8 +43,9 @@
 					<tr>
 						<th>작성자</th>
 						<td>
+					<%-- 	<c:out value="${boardVO.writer }"/> --%>
 							<form:input path="writer"/>
-							<form:errors path="writer" class="error"/>
+							<form:errors path="writer" class="error"/> 
 							
 						</td>
 					</tr>
