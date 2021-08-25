@@ -26,7 +26,6 @@ public class BoardServiceImpl implements BoardService {
 
 	public void insertBoard(BoardVO board) {
 
-		BoardVO vo = new BoardVO();
 		boardDAO.insertBoard(board);
 	
 	}

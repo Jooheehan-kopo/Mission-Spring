@@ -72,6 +72,8 @@ public class BoardController {
 		return "board/write";
 	}
 	
+	
+	
 //	@RequestMapping(value="/board/write", method=RequestMethod.POST)
 	@PostMapping("/board/write")
 //	public void write(@RequestParam("title") String title, @RequestParam("writer") String writer) {
